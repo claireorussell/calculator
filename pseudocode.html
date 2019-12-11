@@ -34,13 +34,14 @@ pseudocode - what the code needs to do
 //javascript 
     // create a variable to store the entries into the calculator this will be an array of entries 
     // variable to store the total which will appear when you click on the = button 
-    // create a var to hold the temporary string input 
+    // create a var to hold the temporary string input (pushed to the entries when operator is selected) 
     // function to decide what to do with the value that gets clicked on + create variable value 
         //if/else statment through the options  
         // if a number or period button is clicked, add it to temporary string of numbers (this create a number above 9)
         // else if the AC button is clicked, delete the entries + temp string + display value"
         // else if CE, clear the last value, clear temp
-        // else if x, 
+        // else if an operator is clicked push temp val to entries + push operator +/*- to entries 
+        // temp var turns back into an empty string ready for the next number 
 
 
 
@@ -51,9 +52,13 @@ My instructions
 
 // What does the calculator need to do 
     // as button is clicked the value of the button will decide which function is called 
-    // number needs to be pushed into a string array 
-    // operator would call a different function and clear the display 
-    // AC would clear the display and empty the entries
+    // number needs to be displayed and stored in a string so you can have double digit numbers 
+    // each operator calls a different function
+        // pushes the temporary string and itself to the entries function
+        // and clears the display so you can add new number
+    // equals sign pushes temp string to entries
+        // takes the numbers at i[0] and i[2] and performs the chosen operator i[1] to them.
+    // AC clears the display, empty's the button entries and temporary string 
 
 
 Functions 
