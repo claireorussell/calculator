@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', startCalculator)
 
 // Define variables used in functions that don't have their own function 
-let temporaryStr = '';
+let tempArray = [];
 let entries = [];
 let total = 0;
 
@@ -34,7 +34,7 @@ function listenersToNumbers(){
 // will put the number into the temporary string and put to display  
 function numClicked(number){
     if (!isNaN(numbers[i]) || numbers[i] == '.') {
-        numbers[i].push(temporaryStr); // pushing number[i] to the temporary string so multiple numbers can be entered
+        numbers[i].push(tempArray); // pushing number[i] to the temporary string so multiple numbers can be entered
         numbers[i].push(display) // pushing number[i] to the display string so multiple numbers can be entered
     
 } 
@@ -54,27 +54,32 @@ function opClicked{
     switch(operators[i]) {
         case '%': 
             document.getElementById("percentage").innerHTML = "%";
-            // push percentage element to temporary string 
+            // push tempArray to entries
+            // push percentage element to entries
             break; 
         case '/': 
             document.getElementById("division").innerHTML = "/";
-            // push division element to temporary string 
+            // push tempArray to entries
+            // push division element to entries
             break;
         case 'x': 
             document.getElementById("multiply").innerHTML = "*";
-            // push multipication element to temporary string 
+            // push tempArray to entries
+            // push multipication element to entries
             break;
         case '-': 
             document.getElementById("subtract").innerHTML = "-";
-            // push subtraction element to temporary string 
+            // push tempArray to entries
+            // push subtraction element to entries 
             break;
         case '+': 
             document.getElementById("sum").innerHTML = "+";
-            // push sum element to temporary string 
+            // push push tempArray to entries
+            // push sum element to entries
             break;
         case '=': 
             document.getElementById("equals").innerHTML = "=";
-            let total == // the return value of temporary string 
+            let total == ;// the return value of entries
             // push 'total' to display 
             break;
     }
@@ -91,7 +96,16 @@ function listenersToClear(){
 }
 
 function clearClicked(){
-
+    switch(cleared[i]) {
+        case 'AC': 
+            // empty tempArray
+            // empty display ;
+            // empty total
+            break; 
+        case 'CE': 
+            // empty display 
+            // remove last item in entries array "pop()"
+            break;
 }
 
 
@@ -117,3 +131,10 @@ function display(){
     // when new number is passed to temporary string it needs to be pushed into the display aswell 
     // display updates when numbers are clicked on, cleared when an operator is chosen and when the equals sign is clicked on
 }
+
+
+
+
+// numbers are entered and put in an array called tempArray 
+// when the operator is used the tempArray is pushed to entries and strung together '.join()'
+// to CE a value you pop() from tempArray
