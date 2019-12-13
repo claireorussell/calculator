@@ -18,7 +18,7 @@ section {
 }
 
 .title {
-    font-size: 25px;
+    font-size: 28px;
     padding: 10px;
 }
 
@@ -41,6 +41,6 @@ button {
     
 }
 
-.operatorLong {
+.operatorTotal {
     width: 85px;
 }
