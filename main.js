@@ -31,14 +31,13 @@ function listenersToNumbers(){
         numbers[i].addEventListener("click", numClicked);
     }
 }
+// will put the number into the temporary string and put to display  
 function numClicked(number){
-    if (!isNaN(numbers[i]) || number == '.') {
-        numbers[i].push(temporaryStr);
-        numbers[i].push(display)
+    if (!isNaN(numbers[i]) || numbers[i] == '.') {
+        numbers[i].push(temporaryStr); // pushing number[i] to the temporary string so multiple numbers can be entered
+        numbers[i].push(display) // pushing number[i] to the display string so multiple numbers can be entered
     
-} // will put the number into the temporary string and put to display  
-
-
+} 
 
 
 // function to decide which operator is chosen when clicked on 
@@ -49,8 +48,35 @@ function listenersToOperators(){
     }
 }
 
+// switch case to apply which operator to temporaryStr 
+//percent, divisi, multip, subtract, sum, equals
 function opClicked{
-    // switch case to apply which operator
+    switch(operators[i]) {
+        case '%': 
+            document.getElementById("percentage").innerHTML = "%";
+            // push percentage element to temporary string 
+            break; 
+        case '/': 
+            document.getElementById("division").innerHTML = "/";
+            // push division element to temporary string 
+            break;
+        case 'x': 
+            document.getElementById("multiply").innerHTML = "*";
+            // push multipication element to temporary string 
+            break;
+        case '-': 
+            document.getElementById("subtract").innerHTML = "-";
+            // push subtraction element to temporary string 
+            break;
+        case '+': 
+            document.getElementById("sum").innerHTML = "+";
+            // push sum element to temporary string 
+            break;
+        case '=': 
+            document.getElementById("equals").innerHTML = "=";
+            let total == // the return value of temporary string 
+            // push 'total' to display 
+            break;
     }
 
 
