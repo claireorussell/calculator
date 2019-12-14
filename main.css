@@ -10,7 +10,7 @@ body {
 }
 
 section {
-    margin: 100px 500px;
+    margin: 10% 43%;
     height: 350px;
     width: 200px;
     background-color: rgb(111, 226, 235);
@@ -23,11 +23,13 @@ section {
 }
 
 #display {
-    width: 200px;
-    height: 40px;
+    padding: 5px;
+    width: 170px;
+    height: 35px;
+    margin: 0px 10px;
     background-color: cornflowerblue;
-
-
+    text-align: left;
+    font-size: 30px;
 }
 
 button {
