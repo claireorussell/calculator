@@ -82,21 +82,25 @@ function getTotal(event) {
             answer = entries[0] / entries[2]
             tempStr = answer
             updateDisplay()
+            entries = []
             break;
         case 'x':
             answer = entries[0] * entries[2]
             tempStr = answer
             updateDisplay()
+            entries = []
             break;
         case '-':
             answer = entries[0] - entries[2]
             tempStr = answer
             updateDisplay()
+            entries = []
             break;
         case '+':
             answer = +entries[0] + +entries[2]
             tempStr = answer
             updateDisplay()
+            entries = []
             break;
 
     }
