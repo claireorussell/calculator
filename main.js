@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', startCalculator)
 
 // Define variables used in functions that don't have their own function 
-let tempArray = [];
+let tempStr = "";
 let entries = [];
 let total = 0;
 
@@ -13,9 +13,11 @@ let total = 0;
     // what is clicked on and which function to run depending on the 'type of key clicked on.
     function startCalculator(){
     listenersToNumbers();
+    /*
     listenersToOperators();
     listenersToClearing();
     listenersToTotal();
+    */
 }
 
 // function for chosenNumber 
@@ -24,6 +26,7 @@ let total = 0;
         //numbers[i].addEventListener("click", numClick 
     //use same syntax to find the right operator 
 
+
 // function to decide which number is chose nwhen clicked on 
 function listenersToNumbers(){
     let numbers = document.getElementsByClassName("num");
@@ -31,13 +34,25 @@ function listenersToNumbers(){
         numbers[i].addEventListener("click", numClicked);
     }
 }
-// will put the number into the temporary string and put to display  
-function numClicked(number){
-    if (!isNaN(numbers[i]) || numbers[i] == '.') {
-        numbers[i].push(tempArray); // pushing number[i] to the temporary string so multiple numbers can be entered
-        numbers[i].push(display) // pushing number[i] to the display string so multiple numbers can be entered
-    
-} 
+// will put the number into the temporary string and put to updateDisplay function 
+function numClicked(event){
+    let number = event.target.innerHTML
+    tempStr = tempStr + number // add number/s to tempStr- don't recreate the variable with let or const or var
+    console.log(tempStr);
+    updateDisplay() // this is always how to call a function 
+}
+
+    // create display function for this down bottom so it can be called on multiple times
+        // display the temporary string 
+            // get display element by className
+            // set innerhtml to tempStr
+
+function updateDisplay(){
+    let display = document.getElementById("display")
+    display.innerHTML = tempStr
+    console.log(tempStr)
+}
+
 
 
 // function to decide which operator is chosen when clicked on 
@@ -49,8 +64,8 @@ function listenersToOperators(){
 }
 
 // switch case to apply which operator to temporaryStr 
-//percent, divisi, multip, subtract, sum, equals
-function opClicked{
+    //percent, divisi, multip, subtract, sum, equals
+function opClicked(){
     switch(operators[i]) {
         case '%': 
             document.getElementById("percentage").innerHTML = "%";
@@ -79,14 +94,14 @@ function opClicked{
             break;
         case '=': 
             document.getElementById("equals").innerHTML = "=";
-            let total == ;// the return value of entries
+            //let total == ;// the return value of entries
             // push 'total' to display 
             break;
     }
+}
 
 
-
-
+/*
 // function to decide when a clearing value is clicked on
 function listenersToClear(){
     let cleared= document.getElementsByClassName("clear");
@@ -107,7 +122,7 @@ function clearClicked(){
             // remove last item in entries array "pop()"
             break;
 }
-
+}
 
 
 
@@ -115,12 +130,12 @@ function clearClicked(){
 function listenersToTotal(){
     let equals = document.getElementsByClassName("operatorTotal");
     for (let i = 0; i < equals.length; i++) {
-        equals[i].addEventListener("click", total);
+        equals[i].addEventListener("click", getTotal);
     }
 }
 
 
-function total(){ 
+function getTotal(){ 
     // when equals sign is clicked on entries[0] is (operator) to entries[2]
 }
 
@@ -137,4 +152,5 @@ function display(){
 
 // numbers are entered and put in an array called tempArray 
 // when the operator is used the tempArray is pushed to entries and strung together '.join()'
-// to CE a value you pop() from tempArray
+// to CE a value you pop() from temp array
+*/
